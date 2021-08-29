@@ -8,12 +8,7 @@ const MongoClient = mongodb.MongoClient;
 const port = process.env.PORT || 8000;
 
 MongoClient.connect(
-    process.env.RESTREVIEWS_DB_URI,
-    {
-        poolSize: 50,                  // people number can connect in same time
-        wtimeout: 2500,                 // request timeout config time ms
-        useNewUrlParse: true
-    }
+    process.env.RESTREVIEWS_DB_URI
 ).catch(err => {
     console.log(err.stack)
     process.exit(1)
